@@ -2,12 +2,20 @@
 
 This document includes some basic requirements needed to get started with the development of batch data import API to load data "archives" into the DINA-Web system. The idea is to start building a very simple service (like a prototype) that meets the needs of some specific use cases. 
 
+## Edits 
+Date | Version | Collaborator | Description
+------------- | ------------- | ------------- | -------------
+2015-02-12  |  1  | Markus E  | original author, provided idea and draft specification
+2015-02-13  |  2  | Markus S  | some more suggestions and added scheme and minor edits here and there
+
+Please just clone this repo and make changes to this document. If you are not part of the DINA-Web organization, send an message to get your github identity associated.
+
 # Use cases
 
 At a later stage, other use cases may be covered but currently the main use cases are:
 
 1. The primary use case involves migration of some large botany datasets (including about 1 million specimen records). 
-2. A secondary use case involves loading some Fishbase CC0 data originally provided in MS Access (.mdb) format into the DINA-Web system. This dataset is available for anyone to work with and can be found at https://github.com/DINA-Web/datasets/fishbase.
+2. A secondary use case involves loading some Fishbase CC0 data originally provided in MS Access (.mdb) format into the DINA-Web system. This dataset is available for anyone to work with and can be found at https://github.com/DINA-Web/datasets/tree/master/fishbase.
 
 
 ## Background
@@ -67,7 +75,7 @@ For now, only a part of the data is to be imported. All data to be imported are 
 
 ### Backward compatibility constraints
 
-Some data types aka "tree data", in particular geography, storage and taxon data types are unfortunately required to be in a quite specific tree format due to some Specify 6 implementation details that make use of "node numbers". This type of data currently needs to be pre-loaded through the Specify 6 workbench before anything else is done. 
+Some data types, in particular geography, storage and taxon data types, aka "tree data" using Specify 6 terminology, are unfortunately required to be in a quite specific tree format due to some Specify 6 implementation details that make use of "node numbers" to store this data. For practical reasons, this type of data currently needs to be pre-loaded through the Specify 6 workbench before anything else is done. 
 
 This means we are currently limited by a backward compatibility constraint, so we are not able to upload "tree data" directly along with other data type, because of technical reasons relating to retaining backward compatibility with the Specify 6 application which is still in use.
 
