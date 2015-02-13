@@ -1,0 +1,25 @@
+
+   /-------------\    /-------------\   /-------------\    /-------------\
+   | Original    |    | Jailbroken  |   | Intermedi-  |    | Rest Web API|
+   | datasource  |    | datasets    |   | ary batch   |    |             |
+   | - "closed"  |    | - "open"    |   | - "DwC-A"-  |    |- write batch|
+   | - format?   |>>>>| - exported  |>>>|   format    |>>>>|  units to   |
+   | - hetero-   |    | - x-platform|   | - zipped    |    |  system     |
+   |   genous    |    |   format    |   | - standard- |    |             |
+   | - legacy    |    | - sqlite?   |   |   ized unit |    |             |
+   \-------------/    \-------------/   \-------------/    \-------------/
+
+   GENERAL SCENARIO FOR BATCH IMPORT USING DINA-WEB ARCHIVES................
+
+   Current legacy       Converted into     Stored as         Fed to web api
+   system exported      open formats       a DINA-Web        which rejects
+   datasets in their    cleaned up and     compliant         with list of
+   own proprietary      internally con-    batch archive     errors or loads
+   format               sistent            ready to load     entire batch
+
+   SPECIFIC EXAMPLE SCENARIO................................................
+
+   Fishbase dataset      Converted to      Converted to       Posted to
+   in .mdb / MS Access   sqlite3 file      DINA-Web batch     dina-web.net/api
+   format                                  archive            batch import
+                                                              endpoint
